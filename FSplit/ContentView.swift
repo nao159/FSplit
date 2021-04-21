@@ -49,8 +49,11 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 Section(header: Text("Total amount")) {
-                    
-                    Text("$\(totalAmount, specifier: "%.2f")")
+                    if tipArray[tipSelected] == 0{
+                        Text("$\(totalAmount, specifier: "%.2f")").foregroundColor(.red)
+                    } else {
+                        Text("$\(totalAmount, specifier: "%.2f")")
+                    }
                     
                 }
                 Section(header: Text("Amount per person")) {
